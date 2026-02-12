@@ -22,7 +22,7 @@
     <footer class="w3-container w3-theme-d2 w3-margin-top w3-padding">
         <div style="display: flex; justify-content: space-between; align-items: center;">
             <div class="w3-panel w3-leftbar w3-theme-l4 w3-padding">
-                <p class="w3-serif"><i>"For Victoria..."</i></p>
+                <p class="w3-serif"><i>"Inspired by Victoria..."</i></p>
             </div>
             <div class="w3-small w3-right-align">
                 <span>&copy; 2026 Matthew Chipperfield</span>

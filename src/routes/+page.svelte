@@ -25,11 +25,6 @@
 				{#if $user}
 					<div class="w3-margin-top">
 						<UploadForm />
-						<button
-							on:click={() => signOut(auth)}
-							class="w3-button w3-red w3-round-large w3-margin-top w3-margin-bottom w3-auto"
-							style="display:block;">Sign out</button
-						>
 					</div>
 				{:else}
 					<div
