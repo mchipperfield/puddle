@@ -1,6 +1,7 @@
 import { initializeApp, getApp, getApps } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getStorage } from "firebase/storage";
+import { getFirestore } from "firebase/firestore";
 import { 
     PUBLIC_APIKEY,
     PUBLIC_AUTHDOMAIN,
@@ -29,3 +30,4 @@ if (!getApps().length) {
 
 export const auth = getAuth(app);
 export const storage = getStorage(app);
+export const db = getFirestore(app);
