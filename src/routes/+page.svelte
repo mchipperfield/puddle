@@ -14,32 +14,24 @@
 
 </svelte:head>
 
-<section>
-	<main>
-		<div class="w3-content" style="max-width: 768px">
-			<main class="w3-container">
-				<div class="w3-margin-top w3-margin-bottom">
-					<RecentPuddle puddle={data.recentPuddle} />
-				</div>
 
-				{#if $user}
-					<div class="w3-margin-top">
-						<UploadForm />
-					</div>
-				{:else}
-					<div
-						class="w3-panel w3-card-4 w3-theme-l1 w3-round-large w3-center w3-padding w3-margin-top"
-					>
-						<h1>Rate My Puddle</h1>
-						<p>
-							The world's most ridiculous platform for puddle enthusiasts. See a puddle? Snap it,
-							upload it, and let our AI connoisseur rate its quality.
-						</p>
-						<Login />
-					</div>
-				{/if}
-			</main>
-		</div>
-	</main>
-</section>
+    <div class="w3-margin-bottom">
+        <RecentPuddle puddle={data.recentPuddle} />
+    </div>
+
+    {#if $user}
+        <div class="w3-margin-top">
+            <UploadForm />
+        </div>
+    {:else}
+        <div class="w3-panel w3-card-4 w3-theme-l1 w3-round-large w3-center w3-padding w3-margin-top">
+            <h1>Rate My Puddle</h1>
+            <p>
+                The world's most ridiculous platform for puddle enthusiasts. See a puddle? Snap it,
+                upload it, and let our AI connoisseur rate its quality.
+            </p>
+            <Login />
+        </div>
+    {/if}
+  
 

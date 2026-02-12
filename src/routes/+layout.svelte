@@ -14,9 +14,18 @@
     });
 </script>
 
+<!-- Page container -->
 <div class="w3-auto w3-theme-l4">
+    <!-- Navigation -->
+    <nav class="w3-bar w3-theme-d2">
+        <a href="/browse" class="w3-bar-item w3-button w3-right">Browse</a>
+        <a href="/" class="w3-bar-item w3-button w3-right">Rate</a>
+    </nav>
+
     <!-- Main -->
-    <slot />
+     <main class="w3-content w3-container w3-theme-l4 w3-padding w3-mobile">
+        <slot />
+     </main>
 
     <!-- Footer -->
     <footer class="w3-container w3-theme-d2 w3-margin-top w3-padding">
