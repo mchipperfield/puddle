@@ -41,11 +41,12 @@
 				<div class="w3-card-4">
 					<img class="w3-image"src={puddle.imageUrl} alt="A puddle" style="width:100%;" />
 					<div class="w3-container w3-center w3-padding w3-white">
-						<p class="w3-serif"><i>"{puddle.rating}"</i></p>
-						<p class="w3-opacity">
+						<p class="w3-serif"><i>"{puddle.rating}"</i><br />
+						<span class="w3-opacity">
 							Uploaded by {puddle.userName} on {new Date(puddle.createdAt).toLocaleDateString(
 								'en-GB'
 							)}
+							</span>
 						</p>
 					</div>
 				</div>
@@ -53,3 +54,13 @@
 		{/each}
 	</div>
 </div>
+
+<style>
+	@media (max-width: 600px) {
+		.w3-image {
+			max-width: 300px !important;
+			display: block !important;
+			margin: 0 auto !important;
+		}
+	}
+</style>

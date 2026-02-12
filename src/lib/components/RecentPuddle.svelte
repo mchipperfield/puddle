@@ -22,11 +22,11 @@
 				/>
 				<div class="w3-margin-top">
 					<p class="w3-large w3-serif">
-						<i>"{puddle.rating}"</i>
-					</p>
-					<p class="w3-opacity">
-						Uploaded by {puddle.userName}<br />
+						<i>"{puddle.rating}"</i><br />
+					<span class="w3-opacity">
+						Uploaded by {puddle.userName}
 						on {new Date(puddle.createdAt).toLocaleDateString('en-GB')}
+					</span>
 					</p>
 				</div>
 			</div>
