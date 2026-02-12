@@ -1,37 +1,14 @@
 <script lang="ts">
-    import { auth } from "$lib/firebase";
-    import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+    import { user } from '$lib/store';
+    import { auth } from '$lib/firebase';
+    import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 
-    async function signInWithGoogle() {
+    async function login() {
         const provider = new GoogleAuthProvider();
-        try {
-            await signInWithPopup(auth, provider);
-        } catch (error) {
-            console.error("Authentication error:", error);
-            alert((error as Error).message);
-        }
+        await signInWithPopup(auth, provider);
     }
 </script>
 
-<div class="login-container">
-    <h2>Login</h2>
-    <button on:click={signInWithGoogle}>
-        Sign in with Google
-    </button>
-</div>
-
-<style>
-    .login-container {
-        max-width: 320px;
-        margin: 50px auto;
-        padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        text-align: center;
-    }
-    button {
-        padding: 10px 20px;
-        font-size: 16px;
-        cursor: pointer;
-    }
-</style>
+{#if !$user}
+	<button on:click={login} class="w3-button w3-blue w3-round-large">Sign in with Google</button>
+{/if}

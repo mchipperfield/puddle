@@ -17,19 +17,28 @@
 
 <section>
     <main>
-        <RecentPuddle puddle={data.recentPuddle} />
-        {#if $user}
-            <UploadForm />         
-            <button on:click={() => signOut(auth)}>Sign out</button>
-        {:else}
-            <Login />
-        {/if}
+        <div class="w3-content" style="max-width:768px">
+            <header class="w3-container w3-center w3-margin-bottom">
+                <h1>Puddle</h1>
+                <p class="w3-opacity">A social media app for sharing pictures of puddles.</p>
+            </header>
+
+            <main>
+                <RecentPuddle puddle={data.recentPuddle} />
+
+                {#if $user}
+                    <div class="w3-margin-top">
+                        <UploadForm />
+                        <button on:click={() => signOut(auth)} class="w3-button w3-red w3-round-large w3-margin-top w3-margin-bottom w3-auto" style="display:block;">Sign out</button>
+                    </div>
+                {:else}
+                    <div class="w3-panel w3-light-grey w3-round-large w3-center w3-padding w3-margin-top">
+                        <p>Please log in to upload your own puddle.</p>
+                        <Login />
+                    </div>
+                {/if}
+            </main>
+        </div>
     </main>
 </section>
-
-<style>
-    section {
-        text-align: center;
-    }
-</style>
 

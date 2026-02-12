@@ -28,7 +28,6 @@
 		try {
 			const selectedFile = file[0];
 
-			// Analyze the image first
 			const formData = new FormData();
 			formData.append('image', selectedFile);
 
@@ -75,44 +74,23 @@
 	}
 </script>
 
-<div class="upload-form">
+<div class="w3-card w3-round-large w3-padding">
 	{#if lastUpload}
-		<div class="last-upload">
+		<div class="w3-center w3-margin-bottom">
 			<h4>Your new puddle!</h4>
-			<img src={lastUpload.imageUrl} alt="Last uploaded puddle" />
+			<img src={lastUpload.imageUrl} alt="Last uploaded puddle" class="w3-image w3-round-large" />
 			<p>"{lastUpload.rating}"</p>
 		</div>
 	{/if}
 
-	<h3>Upload a Puddle</h3>
-	<input type="file" bind:files={file} accept="image/*" />
-	<button on:click={uploadPuddle} disabled={loading}>
-		{loading ? 'Uploading...' : 'Upload'}
-	</button>
-	{#if message}
-		<p>{message}</p>
-	{/if}
+	<div class="w3-center">
+		<h3>Upload a Puddle</h3>
+		<input type="file" bind:files={file} accept="image/*" class="w3-input w3-border w3-round-large" />
+		<button on:click={uploadPuddle} disabled={loading} class="w3-button w3-blue w3-round-large w3-margin-top">
+			{loading ? 'Uploading...' : 'Upload'}
+		</button>
+		{#if message}
+			<p class="w3-text-grey w3-margin-top">{message}</p>
+		{/if}
+	</div>
 </div>
-
-<style>
-	.upload-form {
-		text-align: center;
-		margin-top: 2rem;
-		display: flex;
-		flex-direction: column;
-		gap: 1rem;
-		align-items: center;
-	}
-
-	.last-upload {
-		margin-top: 2rem;
-		border: 1px solid #ccc;
-		padding: 1rem;
-		border-radius: 8px;
-	}
-
-	.last-upload img {
-		max-width: 100%;
-		border-radius: 8px;
-	}
-</style>
