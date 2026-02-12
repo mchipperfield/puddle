@@ -10,5 +10,5 @@
 </script>
 
 {#if !$user}
-	<button on:click={login} class="w3-button w3-blue w3-round-large">Sign in with Google</button>
+	<button on:click={login} class="w3-button w3-theme-d5 w3-round-large">Sign in with Google</button>
 {/if}

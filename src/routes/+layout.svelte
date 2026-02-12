@@ -13,14 +13,15 @@
         return () => unsubscribe();
     });
 </script>
-<div class="w3-content">
+
+<div class="w3-auto w3-theme-l4">
     <!-- Main -->
     <slot />
 
     <!-- Footer -->
-    <footer class="w3-container w3-margin-top w3-padding">
+    <footer class="w3-container w3-theme-d2 w3-margin-top w3-padding">
         <div style="display: flex; justify-content: space-between; align-items: center;">
-            <div class="w3-panel w3-leftbar w3-light-grey w3-padding">
+            <div class="w3-panel w3-leftbar w3-theme-l4 w3-padding">
                 <p class="w3-serif"><i>"For Victoria..."</i></p>
             </div>
             <div class="w3-small w3-right-align">
@@ -32,4 +33,5 @@
             </div>
         </div>
     </footer>
+
 </div>

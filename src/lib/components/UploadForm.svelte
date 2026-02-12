@@ -84,19 +84,33 @@
 	}
 </script>
 
-<div class="w3-card w3-round-large w3-padding">
+<div class="w3-card-4 w3-round-large w3-padding w3-theme-l1">
 	{#if lastUpload}
 		<div class="w3-center w3-margin-bottom">
 			<h4>Your new puddle!</h4>
-			<img src={lastUpload.imageUrl} alt="Last uploaded puddle" class="w3-image w3-round-large" />
+			<img
+				src={lastUpload.imageUrl}
+				alt="Last uploaded puddle"
+				class="w3-image w3-round-large"
+				style="max-height: 300px; object-fit: cover;"
+			/>
 			<p>"{lastUpload.rating}"</p>
 		</div>
 	{/if}
 
 	<div class="w3-center">
 		<h3>Upload a Puddle</h3>
-		<input type="file" bind:files={file} accept="image/*" class="w3-input w3-border w3-round-large" />
-		<button on:click={uploadPuddle} disabled={loading} class="w3-button w3-blue w3-round-large w3-margin-top">
+		<input
+			type="file"
+			bind:files={file}
+			accept="image/*"
+			class="w3-input w3-border w3-round-large"
+		/>
+		<button
+			on:click={uploadPuddle}
+			disabled={loading}
+			class="w3-button w3-theme w3-round-large w3-margin-top"
+		>
 			{loading ? 'Uploading...' : 'Upload'}
 		</button>
 		{#if message}
