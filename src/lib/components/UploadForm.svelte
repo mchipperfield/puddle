@@ -117,7 +117,7 @@
 			accept="image/*"
 			class="w3-input w3-border w3-padding w3-round-large"
 		/>
-		<div class="w3-bar w3-margin-top">
+		<div class="w3-bar w3-margin-top" style="display: flex; justify-content: center; gap: 1rem;">
 			<button
 				on:click={uploadPuddle}
 				disabled={loading}
