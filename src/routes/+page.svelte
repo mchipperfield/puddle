@@ -1,10 +1,13 @@
 <script lang="ts">
     import { user } from '$lib/store';
     import Login from '$lib/components/Login.svelte';
-    import { auth } from '$lib/firebase';
-    import { signOut } from 'firebase/auth';
     import RecentPuddle from '$lib/components/RecentPuddle.svelte';
     import UploadForm from '$lib/components/UploadForm.svelte';
+    import type { PageData } from './$types';
+    import { signOut } from 'firebase/auth';
+    import { auth } from '$lib/firebase';
+
+    export let data: PageData;
 </script>
 
 <svelte:head>
@@ -13,14 +16,15 @@
 </svelte:head>
 
 <section>
-    <RecentPuddle />
-    {#if $user}
-        <h1>Welcome, {$user.displayName}</h1>
-        <UploadForm />
-        <button on:click={() => signOut(auth)}>Logout</button>
-    {:else}
-        <Login />
-    {/if}
+    <main>
+        <RecentPuddle puddle={data.recentPuddle} />
+        {#if $user}
+            <UploadForm />         
+            <button on:click={() => signOut(auth)}>Sign out</button>
+        {:else}
+            <Login />
+        {/if}
+    </main>
 </section>
 
 <style>
