@@ -3,6 +3,7 @@
 	import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 	import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 	import { user } from '$lib/store';
+	import { getIdTokenResult } from 'firebase/auth';
 
 	let file: FileList;
 	let loading = false;
@@ -55,10 +56,19 @@
 			const snapshot = await uploadBytes(storageRef, selectedFile);
 			const downloadURL = await getDownloadURL(snapshot.ref);
 
+			let userName: string | undefined;
+			try {
+				const idTokenResult = await getIdTokenResult(currentUser, true);
+				userName = (idTokenResult.claims.given_name as string) || currentUser.displayName?.split(' ')[0];
+			} catch (error) {
+				console.error('Error getting ID token, falling back to display name', error);
+				userName = currentUser.displayName?.split(' ')[0];
+			}
+
 			await addDoc(collection(db, 'puddles'), {
 				imageUrl: downloadURL,
 				userId: currentUser.uid,
-				userName: currentUser.displayName,
+				userName: userName,
 				createdAt: serverTimestamp(),
 				rating: rating
 			});

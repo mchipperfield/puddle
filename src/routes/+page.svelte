@@ -11,18 +11,12 @@
 </script>
 
 <svelte:head>
-    <title>Puddle Rater</title>
-    <meta name="description" content="Rate my puddle" />
+
 </svelte:head>
 
 <section>
     <main>
         <div class="w3-content" style="max-width:768px">
-            <header class="w3-container w3-center w3-margin-bottom">
-                <h1>Puddle</h1>
-                <p class="w3-opacity">A social media app for sharing pictures of puddles.</p>
-            </header>
-
             <main>
                 <RecentPuddle puddle={data.recentPuddle} />
 
@@ -33,7 +27,11 @@
                     </div>
                 {:else}
                     <div class="w3-panel w3-light-grey w3-round-large w3-center w3-padding w3-margin-top">
-                        <p>Please log in to upload your own puddle.</p>
+                        <h1>Welcome to rate my puddle</h1>
+                        <p>
+                            The world's most ridiculous platform for puddle enthusiasts. See a puddle?
+                            Snap it, upload it, and let our AI connoisseur rate its quality.
+                        </p>
                         <Login />
                     </div>
                 {/if}
