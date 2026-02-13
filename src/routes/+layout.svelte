@@ -36,7 +36,7 @@
                 <span>&copy; 2026 Matthew Chipperfield</span>
                 <address>
                     <a href="https://github.com/mchipperfield/puddle">https://github.com/mchipperfield/puddle</a><br />
-                    <a href="https://ratethispuddle.com">ratethispuddle.com</a>
+                    <a href="https://ratemypuddle.app">ratemypuddle.app</a>
                 </address>
             </div>
     </footer>
