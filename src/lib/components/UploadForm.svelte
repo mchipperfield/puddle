@@ -102,12 +102,12 @@
 				class="w3-image w3-round-large"
 				style="max-height: 300px; object-fit: cover;"
 			/>
-			<p class="w3-serif">"{lastUpload.rating}"</p>
+			<p class="w3-serif"><q>{lastUpload.rating}</q></p>
 		</div>
 	{/if}
 
 	<div class="w3-center w3-white w3-margin-bottom">
-		<header class="w3-container w3-theme">
+		<header class="w3-container w3-theme w3-round">
 			<h3 >Upload a Puddle</h3>
 		</header>
 		<form class="w3-container w3-padding">

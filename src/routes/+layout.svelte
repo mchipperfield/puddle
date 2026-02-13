@@ -29,7 +29,7 @@
 
     <!-- Footer -->
     <footer class="w3-container w3-theme-d2 w3-margin-top w3-padding w3-cell-row">
-            <div class="w3-panel w3-leftbar w3-theme-l4 w3-left w3-mobile">
+            <div class="w3-panel w3-leftbar w3-theme-l4 w3-left w3-mobile w3-round-xlarge">
                 <p class="w3-serif"><i>"Inspired by Victoria..."</i></p>
             </div>
             <div class="w3-panel w3-small w3-right-align w3-right w3-mobile">

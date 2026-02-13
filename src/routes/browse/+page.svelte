@@ -16,14 +16,14 @@
 	}
 </script>
 <div class="w3-card">
-    <header class="w3-theme w3-container">
+    <header class="w3-theme w3-container w3-round">
         <h2 class="w3-center ">Browse Puddles</h2>
     </header>
 	
 
 	<div class="w3-bar w3-white w3-center w3-padding">
 		<div class="w3-dropdown-hover">
-			<button class="w3-button w3-theme-d2">{selectedRating || 'Filter by rating'}</button>
+			<button class="w3-button w3-theme-d2 w3-round">{selectedRating || 'Filter by rating'}</button>
 			<div class="w3-dropdown-content w3-bar-block w3-card-4">
 				<button class="w3-bar-item w3-button" on:click={() => (selectedRating = '')}>All</button>
 				{#each ratings as rating}
@@ -39,14 +39,14 @@
 		{#each puddles as puddle}
 			<div class="w3-col l3 m6 s12 w3-margin-bottom">
 				<div class="w3-card-4">
-					<img class="w3-image"src={puddle.imageUrl} alt="A puddle" style="width:100%;" />
-					<div class="w3-container w3-center w3-padding w3-white">
-						<p class="w3-serif"><i>"{puddle.rating}"</i><br />
-						<span class="w3-opacity">
-							Uploaded by {puddle.userName} on {new Date(puddle.createdAt).toLocaleDateString(
-								'en-GB'
-							)}
-							</span>
+					<img class="w3-image" src={puddle.imageUrl} alt="A puddle" style="width:100%;" />
+					<div class="w3-container w3-center">
+						<p class="w3-serif">
+							<i><q>{puddle.rating}</q></i>
+						</p>
+						<p class="w3-opacity w3-small">
+							Uploaded by {puddle.userName} on
+							{new Date(puddle.createdAt).toLocaleDateString('en-GB')}
 						</p>
 					</div>
 				</div>

@@ -1,14 +1,17 @@
 <script lang="ts">
+
 	export let puddle: {
 		imageUrl: string;
 		rating: string;
 		userName: string;
 		createdAt: string;
+		likes: string[];
 	} | null = null;
+
 </script>
 
 <div class="w3-card-4 w3-round-large w3-center w3-theme-l1">
-	<header class="w3-container w3-theme">
+	<header class="w3-container w3-theme w3-round">
 		<h2>Latest Puddle</h2>
 	</header>
 	<div class="w3-container w3-padding w3-white">
@@ -22,8 +25,8 @@
 				/>
 				<div class="w3-margin-top">
 					<p class="w3-large w3-serif">
-						<i>"{puddle.rating}"</i><br />
-					<span class="w3-opacity">
+						<i><q>{puddle.rating}</q></i><br />
+					<span class="w3-opacity w3-small">
 						Uploaded by {puddle.userName}
 						on {new Date(puddle.createdAt).toLocaleDateString('en-GB')}
 					</span>
